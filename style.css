@@ -5,16 +5,46 @@ body {
   padding: 0;
   font-family: 'Work Sans', sans-serif;
   color: #333;
+  background-color: #f4f3ee;
+  overflow-x: hidden;
+}
+
+#intro-overlay {
+  background-color: #000;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+body.loaded #intro-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+main {
+  opacity: 0;
+  transition: opacity 1.2s ease 0.5s;
+}
+
+body.loaded main {
+  opacity: 1;
 }
 
 section {
-  height: 33.33vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 2rem;
 }
 
 .top {
@@ -25,21 +55,46 @@ section {
 
 .middle {
   background-color: #e0dfdc;
+  color: #333;
 }
 
 .bottom {
   background-color: #000;
+  color: #fff;
 }
 
 h1 {
   font-family: 'Comfortaa', cursive;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 6vw;
+  color: #ff0022;
   margin: 0;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.inner {
+  max-width: 800px;
+  width: 100%;
 }
 
 @media (max-width: 600px) {
   h1 {
-    font-size: 1.5rem;
+    font-size: 10vw;
+  }
+
+  a {
+    font-size: 1rem;
   }
 }
