@@ -63,7 +63,8 @@ section {
   color: #fff;
 }
 
-h1 {
+#intro-overlay h1,
+.top h1 {
   font-family: 'Comfortaa', cursive;
   font-weight: 700;
   font-size: 6vw;
