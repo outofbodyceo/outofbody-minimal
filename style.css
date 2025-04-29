@@ -1,4 +1,4 @@
-/* Out of Body Minimal Site Styling */
+/* Out of Body Minimal Styling – Revised */
 
 body {
   margin: 0;
@@ -45,22 +45,40 @@ section {
   justify-content: center;
   text-align: center;
   padding: 2rem;
+  position: relative;
 }
 
 .top {
-  background: url("assets/six.jpg") no-repeat center center;
+  background-color: #111;
+  color: #fff;
+  overflow: hidden;
+}
+
+.bg-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   background-size: cover;
-  color: #fff;
+  background-position: center;
+  animation: fade 36s infinite;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
 }
 
-.middle {
-  background-color: #e0dfdc;
-  color: #333;
+.bg-slideshow.active {
+  opacity: 1;
 }
 
-.bottom {
-  background-color: #000;
-  color: #fff;
+@keyframes fade {
+  0%, 100% { opacity: 1; }
+  25% { opacity: 0; }
+}
+
+.top .inner {
+  z-index: 1;
 }
 
 #intro-overlay h1,
@@ -72,6 +90,35 @@ section {
   text-transform: uppercase;
   line-height: 1.1;
   color: #ff0022;
+}
+
+.tagline {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-top: 1rem;
+}
+
+.tagline span {
+  opacity: 0;
+  display: inline-block;
+  margin: 0 0.5rem;
+  transition: opacity 0.6s ease-in;
+}
+
+.tagline span.visible {
+  opacity: 1;
+}
+
+.middle {
+  background-color: #e0dfdc;
+  color: #333;
+}
+
+.bottom {
+  background-color: #000;
+  color: #fff;
 }
 
 a {
@@ -91,8 +138,13 @@ a:hover {
 }
 
 @media (max-width: 600px) {
-  h1 {
+  #intro-overlay h1,
+  .top h1 {
     font-size: 10vw;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
   }
 
   a {
