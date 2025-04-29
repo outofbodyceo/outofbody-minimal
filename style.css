@@ -1,4 +1,4 @@
-/* Out of Body - Clean Fade-in Over Image Styling */
+/* Out of Body - Clean Fade-in Over Image Styling (Updated) */
 
 body {
   margin: 0;
@@ -80,12 +80,35 @@ h1 {
   opacity: 1;
 }
 
-section.bottom-space {
-  height: 34vh;
+section.middle {
+  height: 17vh;
   background-color: #f4f3ee;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+section.bottom {
+  height: 17vh;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 2rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.footer-nav span {
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
@@ -95,5 +118,10 @@ section.bottom-space {
 
   .tagline {
     font-size: 1.6rem;
+  }
+
+  .footer-nav {
+    gap: 1rem;
+    font-size: 0.9rem;
   }
 }
